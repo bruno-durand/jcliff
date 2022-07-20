@@ -114,7 +114,6 @@ public class Cli {
         }
 
         List<String> cmdArray=new ArrayList<String>();
-        int ix=0;
         File tempFile;
         File outFile;
         File errFile;

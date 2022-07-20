@@ -18,17 +18,14 @@
 */
 package com.redhat.jcliff;
 
-import java.util.Properties;
-import java.util.List;
-import java.util.Set;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-
-import java.io.BufferedReader;
-import java.io.StringReader;
+import java.util.List;
+import java.util.Properties;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 import org.jboss.dmr.ModelNode;
 import org.jboss.dmr.ModelType;
@@ -130,13 +127,13 @@ public class Configurable {
     }
 
 
-    private static final class StringPostprocessor implements Postprocessor {
-        public ModelNode[] process(String output) {
-            ModelNode node=new ModelNode();
-            node.set(output);
-            return new ModelNode[] {node};
-        }
-    }
+//    private static final class StringPostprocessor implements Postprocessor {
+//        public ModelNode[] process(String output) {
+//            ModelNode node=new ModelNode();
+//            node.set(output);
+//            return new ModelNode[] {node};
+//        }
+//    }
 
     public Configurable(String name) {
         this.name=name;
@@ -183,7 +180,7 @@ public class Configurable {
      */
     public List<MatchRule> getPrefixRules(Action action) {
         List<MatchRule> rules=new ArrayList<MatchRule>();
-        for(Iterator itr=properties.keySet().iterator();itr.hasNext();) {
+        for(Iterator<Object> itr=properties.keySet().iterator();itr.hasNext();) {
             String key=(String)itr.next();
             if(key.startsWith("prefix.")) {
                 String ruleName=key.substring("prefix.".length());
@@ -207,7 +204,7 @@ public class Configurable {
      */
     public List<MatchRule> getMatchRules(Action action) {
         List<MatchRule> rules=new ArrayList<MatchRule>();
-        for(Iterator itr=properties.keySet().iterator();itr.hasNext();) {
+        for(Iterator<Object> itr=properties.keySet().iterator();itr.hasNext();) {
             String key=(String)itr.next();
             if(key.startsWith("match.")) {
                 String ruleName=key.substring("match.".length());

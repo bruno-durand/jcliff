@@ -195,7 +195,6 @@ public class Main {
                 ctx.out=new PrintStream(new File(logOutput));
             RuleSet rules=RuleSet.getRules(new RuleLoader(ruleDir,ctx),"rules");
             if ( waitport != 0 ) {
-            Socket s = null;
             String host = controller.split(":")[0];
             int    port = Integer.parseInt(controller.split(":")[1]);
             try {

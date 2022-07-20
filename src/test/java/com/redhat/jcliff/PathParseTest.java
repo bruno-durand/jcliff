@@ -1,13 +1,11 @@
 package com.redhat.jcliff;
 
-import java.util.List;
 import java.util.ArrayList;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import java.util.List;
 
 import org.jboss.dmr.ModelNode;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class PathParseTest {
 
